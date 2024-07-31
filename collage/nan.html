@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            color: var(--text-color);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 10px snow;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+ </head>
+ <body>
+  
+<div class="container">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbyZi6zZCRG1fQ9fmIpM1XSslHCIrHbZZlEAa0Ar6FuyozLStZOQU8khHZxrrWgcyTaY/exec"
+    name="contact-form">
+    
+  
+    
+    <h4>Log in</h4>
+    <input type="text" name="your-name" placeholder="enter name" required>
+    <input type="text" name="your-number" placeholder="enter number" required>
+    <input type="email" name="your-email" placeholder=" enter email" required>
+    <input type="password" name="password" placeholder="enter password" required>
+    <input type="submit" value="Submit" id="submit">
+</form>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZi6zZCRG1fQ9fmIpM1XSslHCIrHbZZlEAa0Ar6FuyozLStZOQU8khHZxrrWgcyTaY/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+.then(response => alert("Thank you! your form is submitted successfully." ))
+.then(response => alert("we will contact you soon"))
+then(() => { window.location.reload(); })
+.catch(error => console.error('Error!', error.message))
+})
+</script>
+</body>
+</html>
+    
